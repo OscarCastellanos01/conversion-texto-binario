@@ -24,14 +24,18 @@ class ConversionController extends Controller
     }
 
     public function convertTextToBinary(Request $request) {
-        $text = $request->input('text');
+        $text = $request->text;
         $binary = $this->textToBinary($text);
-        return response()->json(['binary' => $binary]);
+        return response()->json([
+            'binary' => $binary
+        ]);
     }
 
     public function convertBinaryToText(Request $request) {
-        $binary = $request->input('binary');
+        $binary = $request->binary;
         $text = $this->binaryToText($binary);
-        return response()->json(['text' => $text]);
+        return response()->json([
+            'text' => $text
+        ]);
     }
 }
