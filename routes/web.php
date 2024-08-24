@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('convert');
+    return view('binary-code-translator.index');
 });
 
 Route::get('/convert', function () {
-    return view('convert');
+    return view('binary-code-translator.index');
 });
 
 Route::post('/convert-text-to-binary', [ConversionController::class, 'convertTextToBinary'])->name('convert.text.to.binary');
